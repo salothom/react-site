@@ -13,7 +13,7 @@ function App() {
         <a
           className="App-link"
           href="https://sarahloisthompson.com"
-          target="_blank"
+          // target="_blank"
           rel="noopener noreferrer"
         >
           Check it out.
@@ -21,7 +21,7 @@ function App() {
         <a
           className="App-link"
           href="https://sarahloisthompson.com/home"
-          target="_blank"
+          // target="_blank"
           rel="noopener noreferrer"
         >
           Angular Site.
