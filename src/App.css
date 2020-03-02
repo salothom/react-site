@@ -7,14 +7,32 @@
   pointer-events: none;
 }
 
+.headerFooter{
+  bottom: 0px;
+  position: absolute;  
+  width: 100%;  
+  font-size: xx-large; 
+  font-style: oblique; 
+  font-variant: small-caps; 
+  text-align: center;
+  background-color: lavenderblush;
+  color: #5e6756;
+  padding: 20px;
+  margin-bottom: 0px;
+
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+
+
 .App-header {
-  background-color: #282c34;
+  background-color:  #5e6756;
+  
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +43,13 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: lavenderblush;
+  text-decoration: none;
+}
+
+.App-link:hover{
+  text-decoration: underline;
+
 }
 
 @keyframes App-logo-spin {
