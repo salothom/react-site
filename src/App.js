@@ -18,6 +18,14 @@ function App() {
         >
           Check it out.
         </a>
+        <a
+          className="App-link"
+          href="https://sarahloisthompson.com/home"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Angular Site.
+        </a>
       </header>
     </div>
   );
