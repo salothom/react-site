@@ -9,7 +9,7 @@
 
 .headerFooter{
   bottom: 0px;
-  position: absolute;  
+  /* position: absolute;   */
   width: 100%;  
   font-size: xx-large; 
   font-style: oblique; 
@@ -19,8 +19,55 @@
   color: #5e6756;
   padding: 20px;
   margin-bottom: 0px;
-
 }
+.graph-wrapper{
+  min-width: 50%
+}
+
+.graph {
+  display: flex;
+  position: relative;
+  max-width: 800px;
+  height: 400px;
+  background: white;
+}
+
+.bar-text-context{
+  height: 100%;
+  width: 12%;
+  background: darkgrey;
+}
+
+.bar-lines-container{
+  position: relative;
+  width: 88%;
+  height: 100%;
+  background: lightgray;
+}
+
+.bar {
+  position: inherit;
+  
+  height: 16%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  background: lavenderblush;
+  z-index: 25;
+  border: 3px solid lavenderblush ;
+  border-left:2px solid #5e6756;
+  border-radius: 0 3px 3px 0;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #5e6756;
+  left:10%;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
