@@ -22,6 +22,7 @@ function App() {
         </a>
 
         <Graph />
+        <p>*Source: Me</p>
 
         <h2 className="headerFooter">Sarah Lois Thompson
         </h2>
@@ -45,26 +46,27 @@ class Graph extends React.Component {
 
 
   renderLines() {
-    return Array(10).fill(null).map((el, i) => (
-      <Line left={i * 10} key={i} />
+    return Array(12).fill(null).map((el, i) => (
+      <Line left={i * (100/12)} key={i} />
     ));
   }
   renderBars() {
     // const { coolThings } = this.state.coolThings;
-    console.log("hello", this.state.coolThings);
-    const coolLength= this.state.coolThings.length;
-    for (let i = 0; coolLength; i++) {
-      return (<Bar percent={this.state.coolThings[i].coolness} key={this.state.coolThings[i].name} />
+    const coolLength = this.state.coolThings.length;
+    let bars = [];
+    for (let i = 0; i < coolLength; i++) {
+      bars.push(<Bar percent={this.state.coolThings[i].coolness} label={this.state.coolThings[i].name} />
       )
     }
+    return bars;
   }
   render() {
     return (
       <div className="graph-wrapper">
-        <h4>Things that Are Cool</h4>
+        <h4>How Great Some Things Are*</h4>
 
         <div className="graph">
-          <BarTextContext />
+          {/* <BarTextContext labels={this.state.coolThings} /> */}
           <div className="bar-lines-container">
             {this.renderLines()}
             {this.renderBars()}
@@ -76,16 +78,30 @@ class Graph extends React.Component {
     )
   }
 }
-const BarTextContext = () => {
+const BarTextContext = ({ labels }) => {
   return (
     <div className="bar-text-context">
+      {/* {
+      labels.map((labels)=>(
+        <div className="text">
+      {labels.name}
+        </div>
+
+
+      ))
+    } */}
     </div>
   )
 }
 
-const Bar = ({ percent }) => {
+const Bar = ({ percent, label }) => {
+  console.log(label);
   return (
-    <div className="bar" style={{ width: percent + '%' }} />
+    <div className="labelCombo">
+      <span className="label">{label}</span>
+    <div className="bar" style={{ width: (percent*.833) + '%' }} />
+    </div>
+    
   )
 }
 const Line = ({ left }) => {
