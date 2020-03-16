@@ -31,6 +31,7 @@ function App() {
     </div>
   );
 }
+
 class Graph extends React.Component {
   state = {
     coolThings: [
@@ -72,7 +73,6 @@ class Graph extends React.Component {
             {this.renderBars()}
 
           </div >
-
         </div>
       </div>
     )
