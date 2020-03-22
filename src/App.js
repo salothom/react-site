@@ -3,6 +3,8 @@ import React from 'react';
 import './App.css';
 
 function App() {
+  // this.state = { homeShow: true };
+
 
   return (
     <div className="App">
@@ -20,9 +22,9 @@ function App() {
           rel="noopener noreferrer" >
           Angular Site.
         </a>
-
-        <Graph />
-        <p>*Source: Me</p>
+        <MainHome />
+        {/* <BookShelf />
+        <Graph /> */}
 
         <h2 className="headerFooter">Sarah Lois Thompson
         </h2>
@@ -31,6 +33,58 @@ function App() {
     </div>
   );
 }
+
+class MainHome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSwitchClick = this.handleSwitchClick.bind(this);
+    // this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = { homeShow: true };
+  }
+
+  handleSwitchClick() {
+    if (this.state.homeShow) {
+      this.setState({ homeShow: false });
+    }
+    else {
+      this.setState({ homeShow: true });
+    }
+  }
+
+
+  render() {
+    const homeShow = this.state.homeShow;
+    let shown;
+    let main;
+    if (homeShow) {
+      shown = <button className="mainButton" onClick={this.handleSwitchClick} >View Library</button>;
+      main = <Graph />
+    } else {
+      shown = <button className="mainButton" onClick={this.handleSwitchClick} >View Main</button>;
+      main = <BookShelf />;
+    }
+
+    return (
+      <div className="homeMain">
+        <div>{shown}</div>
+        <span>{main}</span>
+      </div>
+
+
+    );
+  }
+}
+
+
+
+class BookShelf extends React.Component {
+  render() {
+    return (
+      <p>HELLO</p>
+    )
+  }
+}
+
 
 class Graph extends React.Component {
   state = {
@@ -48,7 +102,7 @@ class Graph extends React.Component {
 
   renderLines() {
     return Array(12).fill(null).map((el, i) => (
-      <Line left={i * (100/12)} key={i} />
+      <Line left={i * (100 / 12)} key={i} />
     ));
   }
   renderBars() {
@@ -74,6 +128,8 @@ class Graph extends React.Component {
 
           </div >
         </div>
+        <p>*Source: Me</p>
+
       </div>
     )
   }
@@ -99,9 +155,9 @@ const Bar = ({ percent, label }) => {
   return (
     <div className="labelCombo">
       <span className="label">{label}</span>
-    <div className="bar" style={{ width: (percent*.833) + '%' }} />
+      <div className="bar" style={{ width: (percent * .833) + '%' }} />
     </div>
-    
+
   )
 }
 const Line = ({ left }) => {
