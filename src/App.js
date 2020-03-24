@@ -80,7 +80,7 @@ class MainHome extends React.Component {
 class BookShelf extends React.Component {
   render() {
     return (
-      <p>HELLO</p>
+      <p>HELLO this will be a book shelf</p>
     )
   }
 }
@@ -129,11 +129,12 @@ class Graph extends React.Component {
           </div >
         </div>
         <p>*Source: Me</p>
-
       </div>
     )
   }
 }
+
+
 const BarTextContext = ({ labels }) => {
   return (
     <div className="bar-text-context">
