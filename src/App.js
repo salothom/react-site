@@ -69,12 +69,9 @@ class MainHome extends React.Component {
         <div>{shown}</div>
         <span>{main}</span>
       </div>
-
-
     );
   }
 }
-
 
 
 class BookShelf extends React.Component {
