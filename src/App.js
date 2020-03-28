@@ -82,7 +82,6 @@ class BookShelf extends React.Component {
   }
 }
 
-
 class Graph extends React.Component {
   state = {
     coolThings: [
@@ -140,8 +139,6 @@ const BarTextContext = ({ labels }) => {
         <div className="text">
       {labels.name}
         </div>
-
-
       ))
     } */}
     </div>
