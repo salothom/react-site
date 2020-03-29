@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from 'favicon.png';
 import './App.css';
+import bookJson from './myBooks.json'
 
 function App() {
   // this.state = { homeShow: true };
@@ -75,12 +76,112 @@ class MainHome extends React.Component {
 
 
 class BookShelf extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      booklist: bookJson.Books,
+      currentPick: "All"
+    }
+  }
+  //   getInitialState:function(){
+  //     return {selectValue:'Radish'};
+  // },
+
+  filterBooks(filter) {
+    let newList = [];
+    if (filter === "Non-Fiction") {
+      for (let i = 0; i < bookJson.Books.length; i++) {
+        if (bookJson.Books[i].nonFic === "True") {
+          newList.push(bookJson.Books[i]);
+        }
+      }
+    } else {
+      for (let i = 0; i < bookJson.Books.length; i++) {
+
+        if (bookJson.Books[i].genre.includes(filter)) {
+          newList.push(bookJson.Books[i]);
+        }
+      }
+    }
+    this.setState({ booklist: newList })
+  }
+
+  handleChange = (e) => {
+    this.setState({ currentPick: e })
+    if (e === "All") {
+      this.setState({ booklist: bookJson.Books })
+    } else {
+      this.filterBooks(e);
+    }
+  }
+  renderGenreDrop() {
+    return (
+      <div className="dropdown">
+        <div className="dropdownSelect">{this.state.currentPick}</div>
+        <div className="dropdown-content" id="genre" name="Genre">
+          <div onClick={this.handleChange.bind(this, "All")}>All</div>
+          <div onClick={this.handleChange.bind(this, "Non-Fiction")}>Non-Fiction</div>
+          <div onClick={this.handleChange.bind(this, "Novel")}>Novel</div>
+          <div onClick={this.handleChange.bind(this, "Science Fiction")}>Science Fiction</div>
+          <div onClick={this.handleChange.bind(this, "Humor")}>Humor</div>
+          <div onClick={this.handleChange.bind(this, "Music")}>Music</div>
+          <div onClick={this.handleChange.bind(this, "Business")}>Business</div>
+          <div onClick={this.handleChange.bind(this, "Historical Fiction")}>Historical Fiction</div>
+        </div>
+      </div>
+    )
+  }
+  renderBookStack() {
+    // const booklist = bookJson.Books
+    let books = [];
+    let paddingNum = 18;
+    let fontfams = ['monospace', 'fantasy', 'cursive', 'sans-serif', 'sans-serif', 'serif', 'serif'];
+    let alignList = ["left", "left", "right", "center", "center"];
+    let bookPile = 14;
+    if (this.state.booklist.length <= 14) {
+      bookPile = this.state.booklist.length
+    }
+
+
+    for (let i = 0; i < bookPile; i++) {
+      if (this.state.booklist[i].title.length > 25) {
+        paddingNum = 17;
+      } else if (this.state.booklist[i].pages < 400) {
+        paddingNum = 9;
+      } else if (this.state.booklist[i].pages < 550) {
+        paddingNum = 13;
+      } else if (this.state.booklist[i].pages < 700) {
+        paddingNum = 16;
+      }
+
+      books.push(
+        <div className='bookCopy' style={{ marginLeft: String(Math.floor((Math.random() * 30) + 1)) + 'px', width: String(92 - Math.floor((Math.random() * 10) + 1)) + "%", background: this.state.booklist[i].coverColor }}>
+          <div className='bookTitle' style={{ fontFamily: fontfams[Math.floor(Math.random() * fontfams.length)], textAlign: alignList[Math.floor(Math.random() * 5)], paddingTop: paddingNum + 'px', paddingBottom: paddingNum + 'px', 'color': this.state.booklist[i].secondaryColor }} id="this.state.booklist[i].title">{this.state.booklist[i].title}
+          </div>
+        </div>)
+    }
+    return books;
+  }
   render() {
     return (
-      <p>HELLO this will be a book shelf</p>
+      <div className="bookShelf">
+        {/* <h2>books</h2> */}
+        {this.renderGenreDrop()}
+        <div >{this.renderBookStack()}</div>
+      </div>
     )
   }
 }
+
+//     "font-family": this.fontfams[Math.floor(Math.random() * this.fontfams.length)]
+
+
+
+
+
+
+
+
 
 class Graph extends React.Component {
   state = {
@@ -131,22 +232,22 @@ class Graph extends React.Component {
 }
 
 
-const BarTextContext = ({ labels }) => {
-  return (
-    <div className="bar-text-context">
-      {/* {
-      labels.map((labels)=>(
-        <div className="text">
-      {labels.name}
-        </div>
-      ))
-    } */}
-    </div>
-  )
-}
+// const BarTextContext = ({ labels }) => {
+//   return (
+//     <div className="bar-text-context">
+//       {/* {
+//       labels.map((labels)=>(
+//         <div className="text">
+//       {labels.name}
+//         </div>
+//       ))
+//     } */}
+//     </div>
+//   )
+// }
 
 const Bar = ({ percent, label }) => {
-  console.log(label);
+  // console.log(label);
   return (
     <div className="labelCombo">
       <span className="label">{label}</span>

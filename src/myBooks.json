@@ -11,7 +11,7 @@
             "femaleLead": "False",
             "genre": [
                 "Self Help",
-                "Businesss"
+                "Business"
             ],
             "published": "1936",
             "coverColor": "darkblue",
@@ -47,7 +47,7 @@
             "youth": "False",
             "femaleLead": "False",
             "genre": [
-                "Businesss",
+                "Business",
                 "History",
                 "America",
                 "Civil Engineering"
@@ -155,7 +155,7 @@
             "femaleLead": "False",
             "genre": [
                 "Tennis",
-                "Humour",
+                "Humor",
                 "Satire",
                 "Science Fiction",
                 "Postmodern",
@@ -178,6 +178,7 @@
             "genre": [
                 "Business",
                 "Gaming",
+                "Technology",
                 "Biography"
             ],
             "published": "2011",
@@ -488,7 +489,7 @@
             "youth": "True",
             "femaleLead": "False",
             "genre": [
-                "Jokes","Humour"
+                "Jokes","Humor"
             ],
             "published": "2010",
             "coverColor": "red",
@@ -573,7 +574,7 @@
             "youth": "False",
             "femaleLead": "False",
             "genre": [
-                "Gaming","Businesss"
+                "Gaming",  "Technology","Business"
             ],
             "published": "2014",
             "coverColor": "blue",
@@ -656,7 +657,7 @@
             "youth": "False",
             "femaleLead": "False",
             "genre": [
-                "Gaming", "Business"
+                "Gaming",  "Technology", "Business"
             ],
             "published": "2017",
             "coverColor": "blue",
@@ -878,7 +879,7 @@
             "youth": "False",
             "femaleLead": "False",
             "genre": [
-                "Femenist","Business","Empowerment","Science"
+                "Femenist","Business","Empowerment","Technology"
             ],
             "published": "2018",
             "coverColor": "grey",
@@ -900,6 +901,91 @@
             "published": "2014",
             "coverColor": "red",
             "secondaryColor": "grey",
+            "opinion": "liked",
+            "image": ".jpeg"
+        },
+        {
+            "title": "Your Favourite Band is Killing Me",
+            "subtitle": "What Pop Music Revalries Reveal About the Meaning of Life",
+            "author": "Steven Hyden",
+            "pages": "282",
+            "nonFic": "True",
+            "youth": "False",
+            "femaleLead": "False",
+            "genre": [
+                "Music","Philosophy"
+            ],
+            "published": "2016",
+            "coverColor": "black",
+            "secondaryColor": "white",
+            "opinion": "loved",
+            "image": ".jpeg"
+        },
+        {
+            "title": "How the Music Got Free",
+            "subtitle": "The Case Zero for Online Music Piracy",
+            "author": "Stephen Witt",
+            "pages": "270",
+            "nonFic": "True",
+            "youth": "False",
+            "femaleLead": "False",
+            "genre": [
+                "Music","Technology","Business"
+            ],
+            "published": "2015",
+            "coverColor": "red",
+            "secondaryColor": "white",
+            "opinion": "loved",
+            "image": ".jpeg"
+        },
+        {
+            "title": "Big Sam Thompson",
+            "subtitle": "Baseball's Greatest Clutch Hitter",
+            "author": "Roy Kerr",
+            "pages": "202",
+            "nonFic": "True",
+            "youth": "False",
+            "femaleLead": "False",
+            "genre": [
+                "Sports","Business"
+            ],
+            "published": "2015",
+            "coverColor": "white",
+            "secondaryColor": "blue",
+            "opinion": "liked",
+            "image": ".jpeg"
+        },
+        {
+            "title": "Meet Me in the Bathroom",
+            "subtitle": "Rebirth and Rock and Roll in New York City 2001-2011",
+            "author": "Lizzy Goodman",
+            "pages": "591",
+            "nonFic": "True",
+            "youth": "False",
+            "femaleLead": "False",
+            "genre": [
+                "Music","Business"
+            ],
+            "published": "2017",
+            "coverColor": "black",
+            "secondaryColor": "green",
+            "opinion": "liked",
+            "image": ".jpeg"
+        },
+        {
+            "title": "Shout!",
+            "subtitle": "The Beatles in their Generation",
+            "author": "Philp Norman",
+            "pages": "525",
+            "nonFic": "True",
+            "youth": "False",
+            "femaleLead": "False",
+            "genre": [
+                "Music","Business"
+            ],
+            "published": "1981",
+            "coverColor": "black",
+            "secondaryColor": "yellow",
             "opinion": "liked",
             "image": ".jpeg"
         }
