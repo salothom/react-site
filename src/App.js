@@ -2,6 +2,8 @@ import React from 'react';
 // import logo from 'favicon.png';
 import './App.css';
 import bookJson from './myBooks.json'
+// import * as pics from './images'
+
 
 function App() {
   // this.state = { homeShow: true };
@@ -34,6 +36,13 @@ function App() {
     </div>
   );
 }
+
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
 
 class MainHome extends React.Component {
   constructor(props) {
@@ -83,9 +92,6 @@ class BookShelf extends React.Component {
       currentPick: "All"
     }
   }
-  //   getInitialState:function(){
-  //     return {selectValue:'Radish'};
-  // },
 
   filterBooks(filter) {
     let newList = [];
@@ -107,12 +113,13 @@ class BookShelf extends React.Component {
   }
 
   handleChange = (e) => {
+    if(e !== this.state.currentPick){
     this.setState({ currentPick: e })
     if (e === "All") {
       this.setState({ booklist: bookJson.Books })
     } else {
       this.filterBooks(e);
-    }
+    }}
   }
   renderGenreDrop() {
     return (
@@ -131,6 +138,7 @@ class BookShelf extends React.Component {
       </div>
     )
   }
+
   renderBookStack() {
     // const booklist = bookJson.Books
     let books = [];
@@ -138,11 +146,9 @@ class BookShelf extends React.Component {
     let fontfams = ['monospace', 'fantasy', 'cursive', 'sans-serif', 'sans-serif', 'serif', 'serif'];
     let alignList = ["left", "left", "right", "center", "center"];
     let bookPile = 14;
-    if (this.state.booklist.length <= 14) {
+    // if (this.state.booklist.length <= 14) {
       bookPile = this.state.booklist.length
-    }
-
-
+    // }
     for (let i = 0; i < bookPile; i++) {
       if (this.state.booklist[i].title.length > 25) {
         paddingNum = 17;
@@ -162,13 +168,36 @@ class BookShelf extends React.Component {
     }
     return books;
   }
+
+  renderBookDisplay() {
+    const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+
+    let booksDisplay = [];
+    for (let i = 0; i < this.state.booklist.length; i++) {
+      booksDisplay.push(
+        <div className="bookImages" >
+          <div onClick={this.handleModal.bind(this,this.state.booklist[i] )} style={{ margin: 5 + "px" }}>
+            <img src={images[this.state.booklist[i].image]} />
+          </div>
+        </div>
+      );
+    }
+    return booksDisplay;
+  }
   render() {
     return (
-      <div className="bookShelf">
-        {/* <h2>books</h2> */}
-        {this.renderGenreDrop()}
-        <div >{this.renderBookStack()}</div>
+      <div>
+
+        <div className="bookShelf">
+          {/* <h2>books</h2> */}
+          {this.renderGenreDrop()}
+          <div >{this.renderBookStack()}</div>
+        </div>
+        <div className="bookDisplay">
+          {this.renderBookDisplay()}
+        </div>
       </div>
+
     )
   }
 }
