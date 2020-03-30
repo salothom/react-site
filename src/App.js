@@ -26,8 +26,7 @@ function App() {
           Angular Site.
         </a>
         <MainHome />
-        {/* <BookShelf />
-        <Graph /> */}
+
 
         <h2 className="headerFooter">Sarah Lois Thompson
         </h2>
@@ -83,13 +82,20 @@ class MainHome extends React.Component {
   }
 }
 
+class Modal extends React.Component {
+  render() {
+    return (<div >Hello Modal</div>);
+  }
+}
 
 class BookShelf extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       booklist: bookJson.Books,
-      currentPick: "All"
+      currentPick: "All",
+
+      book: null
     }
   }
 
@@ -113,13 +119,14 @@ class BookShelf extends React.Component {
   }
 
   handleChange = (e) => {
-    if(e !== this.state.currentPick){
-    this.setState({ currentPick: e })
-    if (e === "All") {
-      this.setState({ booklist: bookJson.Books })
-    } else {
-      this.filterBooks(e);
-    }}
+    if (e !== this.state.currentPick) {
+      this.setState({ currentPick: e })
+      if (e === "All") {
+        this.setState({ booklist: bookJson.Books })
+      } else {
+        this.filterBooks(e);
+      }
+    }
   }
   renderGenreDrop() {
     return (
@@ -138,6 +145,28 @@ class BookShelf extends React.Component {
       </div>
     )
   }
+  renderModal() {
+    if (this.state.book) {
+      return (
+        <h2 > hello!!!!!!</h2>
+      )
+    } else {
+      return (
+        <div></div>
+      )
+    }
+
+
+  }
+  handleModal = (bookModal) => {
+
+    if (this.state.book) {
+      this.setState({ book: null })
+    } else {
+      this.setState({ book: bookModal })
+
+    }
+  }
 
   renderBookStack() {
     // const booklist = bookJson.Books
@@ -147,7 +176,7 @@ class BookShelf extends React.Component {
     let alignList = ["left", "left", "right", "center", "center"];
     let bookPile = 14;
     // if (this.state.booklist.length <= 14) {
-      bookPile = this.state.booklist.length
+    bookPile = this.state.booklist.length
     // }
     for (let i = 0; i < bookPile; i++) {
       if (this.state.booklist[i].title.length > 25) {
@@ -176,7 +205,7 @@ class BookShelf extends React.Component {
     for (let i = 0; i < this.state.booklist.length; i++) {
       booksDisplay.push(
         <div className="bookImages" >
-          <div onClick={this.handleModal.bind(this,this.state.booklist[i] )} style={{ margin: 5 + "px" }}>
+          <div onClick={this.handleModal.bind(this, this.state.booklist[i])} style={{ margin: 5 + "px" }}>
             <img src={images[this.state.booklist[i].image]} />
           </div>
         </div>
@@ -187,9 +216,11 @@ class BookShelf extends React.Component {
   render() {
     return (
       <div>
-
+        {this.renderModal()}
         <div className="bookShelf">
           {/* <h2>books</h2> */}
+          {/* <Modal show={this.show.showModal}/> */}
+
           {this.renderGenreDrop()}
           <div >{this.renderBookStack()}</div>
         </div>
