@@ -145,21 +145,49 @@ class BookShelf extends React.Component {
       </div>
     )
   }
+
+  renderGenres(){
+    let genres = [];
+    if(this.state.book.nonFic === "True"){
+      genres.push(<span>Non-Fiction</span>);
+    }else{
+      genres.push(<span>Fiction</span>);
+    }
+    for (let i = 0; i < this.state.book.genre.length; i++) {
+      genres.push(<span>, {this.state.book.genre[i]}</span>)
+    }
+
+    return genres;
+  }
   renderModal() {
+    
+
     if (this.state.book) {
       return (
-        <h2 > hello!!!!!!</h2>
+        <div className="bookModal">
+          <div>
+            <h2 > {this.state.book.title}</h2>
+            <h5>{this.state.book.author}</h5>
+            <p ngIf="this.state.book.subtitle">{this.state.book.subtitle}</p>
+            <div>
+              Length: {this.state.book.pages}, Published in {this.state.book.published}
+            </div>
+            
+            <div>
+            {this.renderGenres()}
+            </div>
+            <div className="closeModal" onClick={this.handleModal.bind(this, this.state.book)} >Close</div>
+          </div>
+        </div>
+
       )
     } else {
       return (
         <div></div>
       )
     }
-
-
   }
   handleModal = (bookModal) => {
-
     if (this.state.book) {
       this.setState({ book: null })
     } else {
