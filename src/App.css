@@ -118,18 +118,46 @@ float: left;
   /* float: left; */
 }
 
+.modalShadow{
+  background-color: #393D3F99;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+
+  height: 100%;
+  z-index: 10;
+  width: 100%;
+}
 
 .bookModal{
+  padding: 10px;
     z-index: 15;
-    /* height: 100px; */
     background: #7FD1B9;
     margin: auto;
-    max-height: 70%;
+    max-height: 50%;
     position: fixed;
     top: 0; left: 0; bottom: 0; right: 0;
     width: 50%;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.76);
+    border-top-right-radius:  7px 7px;
+    border-top-left-radius:  7px 7px;
+    border-bottom-left-radius:  7px 7px;
+    border-bottom-right-radius:  7px 7px;
 
+}
+
+.col-8{
+  float: left;
+  width: 66%;
+}
+
+.col-6{
+  float: left;
+  width: 50%;
+}
+
+.col-4{
+  width: 33%;
+  float: left;
 }
 
 .closeModal{
@@ -140,6 +168,9 @@ float: left;
     color: initial;
     background: initial;
     transition: 1s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
 }
 .closeModal:hover{ 
@@ -147,15 +178,18 @@ float: left;
   color:#7FD1B9;
 }
 
+/* #E5D4CE */
+.modalHeader{
+  background: #8A817C;
+  color: #7FD1B9;
+    padding-bottom: 1px;
+    padding-top:15px;
+    
+}
 
 
-
-/* #BF4E30 orange
-E5D4CE pink
-7FD1B9  blue
-8A817C  grey
-393D3F dark grey */
-
+.modalHeader h2{
+  margin-top:0px;}
 
 
 .graph-wrapper{

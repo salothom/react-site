@@ -146,12 +146,12 @@ class BookShelf extends React.Component {
     )
   }
 
-  renderGenres(){
+  renderGenres() {
     let genres = [];
-    if(this.state.book.nonFic === "True"){
-      genres.push(<span>Non-Fiction</span>);
-    }else{
-      genres.push(<span>Fiction</span>);
+    if (this.state.book.nonFic === "True") {
+      genres.push(<span>Genres: Non-Fiction</span>);
+    } else {
+      genres.push(<span>Genres: Fiction</span>);
     }
     for (let i = 0; i < this.state.book.genre.length; i++) {
       genres.push(<span>, {this.state.book.genre[i]}</span>)
@@ -160,25 +160,41 @@ class BookShelf extends React.Component {
     return genres;
   }
   renderModal() {
+    // import bookImage from {{this.state.book.image}}
     
 
-    if (this.state.book) {
+    if (this.state.book) {    
+      let images = importAll(require.context('./imagesBooks', false, /\.(png|jpe?g|svg)$/));
+
       return (
-        <div className="bookModal">
-          <div>
-            <h2 > {this.state.book.title}</h2>
-            <h5>{this.state.book.author}</h5>
-            <p ngIf="this.state.book.subtitle">{this.state.book.subtitle}</p>
+        <div>
+          <div className="modalShadow" onClick={this.handleModal.bind(this, this.state.book)}> </div>
+          <div className="bookModal">
             <div>
-              Length: {this.state.book.pages}, Published in {this.state.book.published}
-            </div>
-            
-            <div>
-            {this.renderGenres()}
-            </div>
-            <div className="closeModal" onClick={this.handleModal.bind(this, this.state.book)} >Close</div>
+              <div className="modalHeader">
+                <h2 > {this.state.book.title}</h2>
+                <h5>{this.state.book.author}</h5>
+              </div>
+              <div  style={{marginTop: 5+'px'}} className="col-4">
+                <img style={{width: 60+'%'}} src={images[this.state.book.image]} />
+              </div>
+              <div className="col-8">
+                <p ngIf="this.state.book.subtitle">{this.state.book.subtitle}</p>
+                <div>
+                  Length: {this.state.book.pages}, Published in {this.state.book.published}
+                </div>
+
+                <div>
+                  {this.renderGenres()}
+                </div>
+
+              </div>
+
+
+            </div><div className="closeModal" onClick={this.handleModal.bind(this, this.state.book)} >Close</div>
           </div>
         </div>
+
 
       )
     } else {
@@ -227,7 +243,7 @@ class BookShelf extends React.Component {
   }
 
   renderBookDisplay() {
-    const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+    const images = importAll(require.context('./imagesBooks', false, /\.(png|jpe?g|svg)$/));
 
     let booksDisplay = [];
     for (let i = 0; i < this.state.booklist.length; i++) {
