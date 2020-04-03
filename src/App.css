@@ -322,3 +322,45 @@ float: left;
     transform: rotate(360deg);
   }
 }
+
+
+@media only screen and (max-width: 815px){
+
+  .bookImages{
+    width: 50%;
+    float: left;
+    /* margin: 5px; */
+  }
+.bookTitle{
+  font-size: 8pt;
+}
+  .bookDisplay{
+    width: 50%;
+    float: left;
+  }
+
+.bookShelf{
+  width: 50%;
+  float: left;
+}
+.dropdown{
+  width:80%;
+margin: 5px;
+}
+
+
+.mainButton{
+  padding: 17px 35px 17px 35px;
+}
+
+.label{
+  font-size: 12px;
+}
+
+.graph{
+
+  margin-left: 2.5%;
+  max-width: 95%;
+}
+
+}
