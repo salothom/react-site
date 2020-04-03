@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <a className="App-link"
+        {/* <a className="App-link"
           href="https://www.linkedin.com/in/sarahthompson3/"
           // target="_blank"
           rel="noopener noreferrer" >
@@ -24,7 +24,7 @@ function App() {
           // target="_blank"
           rel="noopener noreferrer" >
           Angular Site.
-        </a>
+        </a> */}
         <MainHome />
 
 
