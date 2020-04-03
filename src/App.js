@@ -161,9 +161,9 @@ class BookShelf extends React.Component {
   }
   renderModal() {
     // import bookImage from {{this.state.book.image}}
-    
 
-    if (this.state.book) {    
+
+    if (this.state.book) {
       let images = importAll(require.context('./imagesBooks', false, /\.(png|jpe?g|svg)$/));
 
       return (
@@ -175,23 +175,28 @@ class BookShelf extends React.Component {
                 <h2 > {this.state.book.title}</h2>
                 <h5>{this.state.book.author}</h5>
               </div>
-              <div  style={{marginTop: 5+'px'}} className="col-4">
-                <img style={{width: 60+'%'}} src={images[this.state.book.image]} />
+              <div >
+              <div style={{ marginTop: 5 + 'px' }} className="col-4-m">
+                <img style={{ width: 60 + '%' }} src={images[this.state.book.image]} />
               </div>
-              <div className="col-8">
-                <p ngIf="this.state.book.subtitle">{this.state.book.subtitle}</p>
-                <div>
-                  Length: {this.state.book.pages}, Published in {this.state.book.published}
+              
+                <div className="col-8-m">
+                  <p ngIf="this.state.book.subtitle">{this.state.book.subtitle}</p>
+                  <div>
+                    Length: {this.state.book.pages}, Published in {this.state.book.published}
+                  </div>
+
+                  <div>
+                    {this.renderGenres()}
+                  </div>
+
                 </div>
 
-                <div>
-                  {this.renderGenres()}
-                </div>
-
               </div>
 
 
-            </div><div className="closeModal" onClick={this.handleModal.bind(this, this.state.book)} >Close</div>
+            </div>
+            <div className="closeModal" onClick={this.handleModal.bind(this, this.state.book)} >Close</div>
           </div>
         </div>
 

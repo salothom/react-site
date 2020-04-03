@@ -34,6 +34,7 @@ float: left;
 .bookShelf{
   /* background:grey; */
   /* min-height: 600px; */
+  margin-right: 0px;
   width: 30%;
   float: left;
 }
@@ -160,6 +161,16 @@ float: left;
   float: left;
 }
 
+.col-4-m{
+  width: 33%;
+  float: left;
+}
+
+.col-6-m{
+  float: left;
+  width: 50%;
+}
+
 .closeModal{
   float: right;
     padding: 2px;
@@ -281,8 +292,16 @@ float: left;
   padding: 7px 25px 7px 25px;
 }
 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .homeMain{
   width: 100%;
+
+
 
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -339,15 +358,16 @@ float: left;
     float: left;
   }
 
-.bookShelf{
-  width: 50%;
-  float: left;
-}
+/* */
 .dropdown{
   width:80%;
 margin: 5px;
 }
 
+.bookShelf{
+  margin-right: 10px;
+  width: 45%;
+}
 
 .mainButton{
   padding: 17px 35px 17px 35px;
@@ -355,6 +375,20 @@ margin: 5px;
 
 .label{
   font-size: 12px;
+}
+
+.bookModal{
+  width: 75%;
+
+  max-height: 80%;
+}
+
+.col-4-m{
+  width: 100%;
+}
+
+.col-6-m{
+  width: 100%;
 }
 
 .graph{
