@@ -36,6 +36,8 @@ function App() {
   );
 }
 
+
+
 function importAll(r) {
   let images = {};
   r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });

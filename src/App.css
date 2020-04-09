@@ -3,6 +3,8 @@ E5D4CE pink
 7FD1B9  blue
 8A817C  grey
 393D3F dark grey */
+
+
 .App {
   text-align: center;
 }
@@ -341,7 +343,6 @@ color:  #E5D4CE}
     transform: rotate(360deg);
   }
 }
-
 
 @media only screen and (max-width: 715px){
 
