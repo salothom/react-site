@@ -12,19 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        {/* <a className="App-link"
-          href="https://www.linkedin.com/in/sarahthompson3/"
-          // target="_blank"
-          rel="noopener noreferrer" >
-          Check out Linkedin.
-        </a>
-        <a className="App-link"
-          href="https://sarahloisthompson.com/home"
-          // target="_blank"
-          rel="noopener noreferrer" >
-          Angular Site.
-        </a> */}
+
         <MainHome />
 
 
@@ -67,17 +55,17 @@ class MainHome extends React.Component {
     const homeShow = this.state.homeShow;
     let shown;
     let main;
-    if (homeShow) {
-      shown = <button className="mainButton" onClick={this.handleSwitchClick} >View Library</button>;
-      main = <Graph />
-    } else {
-      shown = <button className="mainButton" onClick={this.handleSwitchClick} >View Main</button>;
-      main = <BookShelf />;
-    }
+    // if (homeShow) {
+    //   shown = <button className="mainButton" onClick={this.handleSwitchClick} >View Library</button>;
+    //   main = <Graph />
+    // } else {
+    shown = <button className="mainButton" onClick={this.handleSwitchClick} >View Main</button>;
+    main = <BookShelf />;
+    // }
 
     return (
       <div className="homeMain">
-        <div>{shown}</div>
+        {/* <div>{shown}</div> */}
         <span>{main}</span>
       </div>
     );
@@ -172,21 +160,20 @@ class BookShelf extends React.Component {
         <div>
           <div className="modalShadow" onClick={this.handleModal.bind(this, this.state.book)}> </div>
           <div className="bookModal">
-            <div>
+            {/* <div className="heightAll"> */}
               <div className="modalHeader">
                 <h2 > {this.state.book.title}</h2>
                 <h5>{this.state.book.author}</h5>
               </div>
-              <div >
-              <div style={{ marginTop: 5 + 'px' }} className="col-4-m">
-                <img style={{ width: 60 + '%' }} src={images[this.state.book.image]} />
-              </div>
-              
-                <div className="col-8-m">
+              <div className="modalBody">
+                <div style={{ marginTop: 5 + 'px' }} className="col-6-m">
+                  <img style={{ width: 70 + '%' }} src={images[this.state.book.image]} />
+                </div>
+
+                <div className="col-6-m">
                   <p ngIf="this.state.book.subtitle">{this.state.book.subtitle}</p>
-                  <div>
-                    Length: {this.state.book.pages}, Published in {this.state.book.published}
-                  </div>
+                  <div>Length: {this.state.book.pages}</div>
+                  <div> Published in {this.state.book.published} </div>
 
                   <div>
                     {this.renderGenres()}
@@ -196,10 +183,10 @@ class BookShelf extends React.Component {
 
               </div>
 
+            <div className="closeModal" onClick={this.handleModal.bind(this, this.state.book)} >Close</div>
 
             </div>
-            <div className="closeModal" onClick={this.handleModal.bind(this, this.state.book)} >Close</div>
-          </div>
+          {/* </div> */}
         </div>
 
 
