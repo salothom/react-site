@@ -45,6 +45,7 @@ float: left;
     /* background: #7FD1B9;/ */
     background: #393D3F;
     margin-bottom: 0px;
+    
     margin-left: 10px;
     margin-right: 10px;
     margin-top:1px;
@@ -59,6 +60,8 @@ float: left;
 .bookTitle{
   font-size: small;
   padding: 7px;
+  padding-bottom: 12px;
+  padding-top: 12px;
   background-image: linear-gradient(to top,rgba(0, 0, 0, 0.76),  transparent 50%,   rgba(235, 232, 232, 0.342) );
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.76);
   border-top-right-radius:  2% 90%;
@@ -99,7 +102,7 @@ float: left;
   padding: 6px;
 }
 .dropdown-content div:hover{
-  background: #393D3F;
+  background: #8A817C;
 }
 
 .dropdownSelect{
@@ -369,6 +372,8 @@ color:  #E5D4CE}
 
 @media only screen and (max-width: 715px){
 
+
+
   .bookImages{
     width: 50%;
     float: left;
@@ -376,6 +381,8 @@ color:  #E5D4CE}
   }
 .bookTitle{
   font-size: 8pt;
+  padding-bottom: 9px !important;
+  padding-top: 9px !important;
 }
   .bookDisplay{
     width: 50%;

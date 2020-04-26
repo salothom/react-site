@@ -218,13 +218,13 @@ class BookShelf extends React.Component {
     // }
     for (let i = 0; i < bookPile; i++) {
       if (this.state.booklist[i].title.length > 25) {
-        paddingNum = 17;
+        paddingNum = 23;
       } else if (this.state.booklist[i].pages < 400) {
-        paddingNum = 9;
-      } else if (this.state.booklist[i].pages < 550) {
         paddingNum = 13;
+      } else if (this.state.booklist[i].pages < 550) {
+        paddingNum = 18;
       } else if (this.state.booklist[i].pages < 700) {
-        paddingNum = 16;
+        paddingNum = 20;
       }
 
       books.push(

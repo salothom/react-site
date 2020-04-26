@@ -563,7 +563,7 @@
             "coverColor": "white",
             "secondaryColor": "pink",
             "opinion": "Liked",
-            "image": ".jpeg"
+            "image": "citycity.jpeg"
         },
         {
             "title": "Console Wars",
@@ -580,7 +580,7 @@
             "coverColor": "blue",
             "secondaryColor": "red",
             "opinion": "Liked",
-            "image": ".jpeg"
+            "image": "consolewar.jpeg"
         },
         {
             "title": "Texas Ranger Tales",
@@ -663,7 +663,7 @@
             "coverColor": "blue",
             "secondaryColor": "yellow",
             "opinion": "liked",
-            "image": ".jpeg"
+            "image": "blood.jpeg"
         },
         {
             "title": "Shadow Spinner",
@@ -680,7 +680,7 @@
             "coverColor": "tan",
             "secondaryColor": "black",
             "opinion": "liked",
-            "image": ".jpeg"
+            "image": "shadow.jpeg"
         },
         {
             "title": "Zombie Prom",
@@ -816,7 +816,7 @@
             "coverColor": "white",
             "secondaryColor": "red",
             "opinion": "liked",
-            "image": ".jpeg"
+            "image": "loot.jpeg"
         },
         {
             "title": "A Short History of Nearly Everything",
@@ -833,7 +833,7 @@
             "coverColor": "white",
             "secondaryColor": "red",
             "opinion": "liked",
-            "image": ".jpeg"
+            "image": "breif.jpeg"
         },
       
         {
@@ -902,7 +902,7 @@
             "coverColor": "red",
             "secondaryColor": "grey",
             "opinion": "liked",
-            "image": ".jpeg"
+            "image": "storied.jpeg"
         },
         {
             "title": "Your Favourite Band is Killing Me",
@@ -919,7 +919,7 @@
             "coverColor": "black",
             "secondaryColor": "white",
             "opinion": "loved",
-            "image": ".jpeg"
+            "image": "fav.jpeg"
         },
         {
             "title": "How the Music Got Free",
@@ -936,7 +936,7 @@
             "coverColor": "red",
             "secondaryColor": "white",
             "opinion": "loved",
-            "image": ".jpeg"
+            "image": "free.jpeg"
         },
         {
             "title": "Big Sam Thompson",
@@ -953,7 +953,7 @@
             "coverColor": "white",
             "secondaryColor": "blue",
             "opinion": "liked",
-            "image": ".jpeg"
+            "image": "samt.jpeg"
         },
         {
             "title": "Meet Me in the Bathroom",
@@ -970,7 +970,7 @@
             "coverColor": "black",
             "secondaryColor": "green",
             "opinion": "liked",
-            "image": ".jpeg"
+            "image": "bathroom.jpeg"
         },
         {
             "title": "Shout!",
@@ -987,7 +987,7 @@
             "coverColor": "black",
             "secondaryColor": "yellow",
             "opinion": "liked",
-            "image": ".jpeg"
+            "image": "shout.jpeg"
         }
     ]
 }
